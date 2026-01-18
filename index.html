@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INGLÊS PARA AUTODIDATAS - MÉTODO IPA</title>
+    
+    <!-- Fontes Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --uk-blue: #00247d;
+            --uk-red: #cf142b;
+            --accent-gold: #d4af37;
+            --bg-light: #f4f7f6;
+            --text-dark: #1a1a1a;
+            --text-muted: #555;
+            --card-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            --hover-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Header Premium */
+        header {
+            background: linear-gradient(135deg, var(--uk-blue) 0%, #00154d 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 6px solid var(--uk-red);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png');
+            opacity: 0.1;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8em;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .author-box {
+            margin-top: 15px;
+            font-size: 1.1em;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .author-name {
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: -30px auto 40px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Caixa de Alerta */
+        .alert-box {
+            background-color: #ffffff;
+            border-left: 6px solid #ffcc00;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .alert-box h4 {
+            margin: 0 0 10px 0;
+            color: #856404;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2em;
+        }
+
+        .alert-box p {
+            font-size: 0.95em;
+            margin-bottom: 10px;
+            color: var(--text-muted);
+        }
+
+        .alert-box ul {
+            margin: 10px 0 0 20px;
+            padding: 0;
+            font-size: 0.9em;
+            color: var(--text-dark);
+        }
+
+        .alert-box li {
+            margin-bottom: 6px;
+        }
+
+        /* Botão Destaque */
+        .featured-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--uk-red);
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.2em;
+            margin-bottom: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(207, 20, 43, 0.3);
+            text-align: center;
+        }
+
+        .featured-btn:hover {
+            transform: translateY(-3px);
+            background: #a50f22;
+            box-shadow: 0 10px 25px rgba(207, 20, 43, 0.4);
+        }
+
+        /* Seções de Módulo */
+        .module-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: var(--card-shadow);
+            border-top: 5px solid var(--uk-blue);
+        }
+
+        .module-header {
+            margin-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 15px;
+        }
+
+        .module-badge {
+            display: inline-block;
+            background: var(--uk-blue);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .module-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            color: var(--uk-blue);
+            margin: 0;
+        }
+
+        /* Grid de Aulas */
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .lesson-item {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .lesson-item:hover {
+            border-color: var(--uk-red);
+            background: #fff9f9;
+            transform: translateX(5px);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .lesson-icon {
+            width: 45px;
+            height: 45px;
+            background: #f0f2f5;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: 800;
+            color: var(--uk-blue);
+            font-size: 0.9em;
+            flex-shrink: 0;
+            transition: all 0.3s;
+        }
+
+        .lesson-item:hover .lesson-icon {
+            background: var(--uk-red);
+            color: white;
+        }
+
+        .lesson-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lesson-label {
+            font-size: 0.7em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .lesson-name {
+            font-weight: 700;
+            font-size: 1em;
+            line-height: 1.2;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #999;
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 60px;
+        }
+
+        footer p { margin: 5px 0; }
+        .footer-brand { color: white; font-weight: 700; margin-bottom: 15px !important; }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8em; }
+            .module-card { padding: 20px; }
+            .lessons-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>Inglês para Autodidatas</h1>
+            <div style="font-size: 1.4em; font-weight: 300; margin-top: 5px;">Método IPA</div>
+            <div class="author-box">
+                Autores: <span class="author-name">Fábio Almeida & Lucas Martin</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- ALERTA DE COMPATIBILIDADE -->
+        <div class="alert-box">
+            <h4>🔊 Compatibilidade de áudio</h4>
+            <p>
+                Para melhor funcionamento dos áudios, utilize o <strong>Google Chrome (Android)</strong> ou <strong>Safari (iPhone)</strong>. 
+                O navegador Chrome funciona melhor em ambos.
+            </p>
+            <p><strong>👉 Se estiver usando outro navegador no Android:</strong></p>
+            <ul>
+                <li>1. Abra as <strong>Configurações</strong> do celular</li>
+                <li>2. Vá em <strong>Aplicativos</strong> → <strong>Aplicativos padrão</strong></li>
+                <li>3. Toque em <strong>Navegador</strong></li>
+                <li>4. Selecione <strong>Google Chrome</strong></li>
+                <li>5. Feche e abra novamente o link da aula.</li>
+            </ul>
+        </div>
+
+        <!-- AULA ZERO / DESTAQUE -->
+        <a href="https://espaco-liberdade.github.io/inglesipa0" class="featured-btn">
+            📚 AULA DE INTRODUÇÃO: DESVENDANDO O MÉTODO IPA
+        </a>
+
+        <!-- MÓDULO 1 -->
+        <div class="module-card">
+            <div class="module-header">
+                <span class="module-badge">Módulo 1</span>
+                <h2 class="module-title">Os Alicerces do Inglês</h2>
+            </div>
+            <div class="lessons-grid">
+                <a href="https://espaco-liberdade.github.io/inglesipa1" class="lesson-item">
+                    <div class="lesson-icon">01</div>
+                    <div class="lesson-info">
+                        <span class="lesson-label">Lesson</span>
+                        <span class="lesson-name">Desvendando o Alfabeto e os Sons Essenciais</span>
+                    </div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa2" class="lesson-item">
+                    <div class="lesson-icon">02</div>
+                    <div class="lesson-info">
+                        <span class="lesson-label">Lesson</span>
+                        <span class="lesson-name">Quem Sou Eu, Quem é Você? – Verbo "To Be"</span>
+                    </div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa3" class="lesson-item">
+                    <div class="lesson-icon">03</div>
+                    <div class="lesson-info">
+                        <span class="lesson-label">Lesson</span>
+                        <span class="lesson-name">Identificando o Mundo ao Redor – Artigos</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- MÓDULO 2 -->
+        <div class="module-card">
+            <div class="module-header">
+                <span class="module-badge">Módulo 2</span>
+                <h2 class="module-title">Descrevendo o Presente</h2>
+            </div>
+            <div class="lessons-grid">
+                <a href="https://espaco-liberdade.github.io/inglesipa4" class="lesson-item">
+                    <div class="lesson-icon">04</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Substantivos e o Início das Rotinas</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa5" class="lesson-item">
+                    <div class="lesson-icon">05</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Ações do Dia a Dia – Presente Simples</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa6" class="lesson-item">
+                    <div class="lesson-icon">06</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Negando e Perguntando no Presente</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa7" class="lesson-item">
+                    <div class="lesson-icon">07</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Com Que Frequência? – Advérbios</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa8" class="lesson-item">
+                    <div class="lesson-icon">08</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">O Que Está Acontecendo Agora?</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa9" class="lesson-item">
+                    <div class="lesson-icon">09</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Descrevendo Pessoas, Lugares e Coisas</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa10" class="lesson-item">
+                    <div class="lesson-icon">10</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Quanto Disso? Falando Sobre Quantidades</span></div>
+                </a>
+            </div>
+        </div>
+
+        <!-- MÓDULO 3 -->
+        <div class="module-card">
+            <div class="module-header">
+                <span class="module-badge">Módulo 3</span>
+                <h2 class="module-title">Revisitando o Passado</h2>
+            </div>
+            <div class="lessons-grid">
+                <a href="https://espaco-liberdade.github.io/inglesipa11" class="lesson-item">
+                    <div class="lesson-icon">11</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">O Verbo "To Be" no Passado</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa12" class="lesson-item">
+                    <div class="lesson-icon">12</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Passado Simples com Verbos Regulares</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa13" class="lesson-item">
+                    <div class="lesson-icon">13</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Passado Simples com Verbos Irregulares</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa14" class="lesson-item">
+                    <div class="lesson-icon">14</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Ações em Progresso no Passado</span></div>
+                </a>
+            </div>
+        </div>
+
+        <!-- MÓDULO 4 -->
+        <div class="module-card">
+            <div class="module-header">
+                <span class="module-badge">Módulo 4</span>
+                <h2 class="module-title">Futuro e Capacidades</h2>
+            </div>
+            <div class="lessons-grid">
+                <a href="https://espaco-liberdade.github.io/inglesipa15" class="lesson-item">
+                    <div class="lesson-icon">15</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Planos e Previsões – Futuro com "Will"</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa16" class="lesson-item">
+                    <div class="lesson-icon">16</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Intenções e Planos – "Going To"</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa17" class="lesson-item">
+                    <div class="lesson-icon">17</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Habilidade e Permissão – "Can" e "Could"</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa18" class="lesson-item">
+                    <div class="lesson-icon">18</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Pedidos Formais e Possibilidades</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa19" class="lesson-item">
+                    <div class="lesson-icon">19</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Dando Ordens e Sugestões – O Imperativo</span></div>
+                </a>
+            </div>
+        </div>
+
+        <!-- MÓDULO 5 -->
+        <div class="module-card">
+            <div class="module-header">
+                <span class="module-badge">Módulo 5</span>
+                <h2 class="module-title">Tempos Perfeitos e Modais</h2>
+            </div>
+            <div class="lessons-grid">
+                <a href="https://espaco-liberdade.github.io/inglesipa20" class="lesson-item">
+                    <div class="lesson-icon">20</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Presente Perfeito Simples</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa21" class="lesson-item">
+                    <div class="lesson-icon">21</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Presente Perfeito Contínuo</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa22" class="lesson-item">
+                    <div class="lesson-icon">22</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Obrigações e Conselhos – Must, Should</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa23" class="lesson-item">
+                    <div class="lesson-icon">23</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Passado Perfeito Simples</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa24" class="lesson-item">
+                    <div class="lesson-icon">24</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Advérbios de Modo, Lugar e Tempo</span></div>
+                </a>
+            </div>
+        </div>
+
+        <!-- MÓDULO 6 -->
+        <div class="module-card">
+            <div class="module-header">
+                <span class="module-badge">Módulo 6</span>
+                <h2 class="module-title">Estruturas Complexas</h2>
+            </div>
+            <div class="lessons-grid">
+                <a href="https://espaco-liberdade.github.io/inglesipa25" class="lesson-item">
+                    <div class="lesson-icon">25</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Pronomes Relativos para Detalhar</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa26" class="lesson-item">
+                    <div class="lesson-icon">26</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Condicionais Zero e Tipo 1</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa27" class="lesson-item">
+                    <div class="lesson-icon">27</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Condicional Tipo 2 (Hipotético)</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa28" class="lesson-item">
+                    <div class="lesson-icon">28</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Condicional Tipo 3 (Hipotético Passado)</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa29" class="lesson-item">
+                    <div class="lesson-icon">29</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Introdução à Voz Passiva</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa30" class="lesson-item">
+                    <div class="lesson-icon">30</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Contando o Que Outros Disseram</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa31" class="lesson-item">
+                    <div class="lesson-icon">31</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Gerúndios (Verbos com -ing como Nomes)</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa32" class="lesson-item">
+                    <div class="lesson-icon">32</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Infinitivos com "To"</span></div>
+                </a>
+            </div>
+        </div>
+
+        <!-- MÓDULO 7 -->
+        <div class="module-card">
+            <div class="module-header">
+                <span class="module-badge">Módulo 7</span>
+                <h2 class="module-title">Refinamento e Fluência</h2>
+            </div>
+            <div class="lessons-grid">
+                <a href="https://espaco-liberdade.github.io/inglesipa33" class="lesson-item">
+                    <div class="lesson-icon">33</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Dominando os Phrasal Verbs</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa34" class="lesson-item">
+                    <div class="lesson-icon">34</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Question Tags (Confirmando)</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa35" class="lesson-item">
+                    <div class="lesson-icon">35</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Pronomes Reflexivos e Enfáticos</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa36" class="lesson-item">
+                    <div class="lesson-icon">36</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Pronomes Indefinidos</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa37" class="lesson-item">
+                    <div class="lesson-icon">37</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Costumes e Adaptação – Used to</span></div>
+                </a>
+                <a href="https://espaco-liberdade.github.io/inglesipa38" class="lesson-item">
+                    <div class="lesson-icon">38</div>
+                    <div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Palavras Parecidas e Falsos Amigos</span></div>
+                </a>
+            </div>
+        </div>
+
+        <!-- MÓDULO 8 -->
+        <div class="module-card">
+            <div class="module-header">
+                <span class="module-badge">Módulo 8</span>
+                <h2 class="module-title">Prática Integrada Final</h2>
+            </div>
+            <div class="lessons-grid">
+                <a href="https://espaco-liberdade.github.io/inglesipa39" class="lesson-item"><div class="lesson-icon">39</div><div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Prática Intensiva de Tempos Presentes</span></div></a>
+                <a href="https://espaco-liberdade.github.io/inglesipa40" class="lesson-item"><div class="lesson-icon">40</div><div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Prática Intensiva de Tempos Passados</span></div></a>
+                <a href="https://espaco-liberdade.github.io/inglesipa41" class="lesson-item"><div class="lesson-icon">41</div><div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Prática Intensiva de Tempos Futuros</span></div></a>
+                <a href="https://espaco-liberdade.github.io/inglesipa42" class="lesson-item"><div class="lesson-icon">42</div><div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Desafio de Tempos Verbais Mistos</span></div></a>
+                <a href="https://espaco-liberdade.github.io/inglesipa43" class="lesson-item"><div class="lesson-icon">43</div><div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Conversas da Vida Real (Mini-Diálogos)</span></div></a>
+                <a href="https://espaco-liberdade.github.io/inglesipa44" class="lesson-item"><div class="lesson-icon">44</div><div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Expressões Idiomáticas Essenciais</span></div></a>
+                <a href="https://espaco-liberdade.github.io/inglesipa45" class="lesson-item"><div class="lesson-icon">45</div><div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Provérbios e Frases Famosas</span></div></a>
+                <a href="https://espaco-liberdade.github.io/inglesipa46" class="lesson-item"><div class="lesson-icon">46</div><div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Letras de Músicas Clássicas</span></div></a>
+                <a href="https://espaco-liberdade.github.io/inglesipa47" class="lesson-item"><div class="lesson-icon">47</div><div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Trechos de Cenas de Filmes Famosos</span></div></a>
+                <a href="https://espaco-liberdade.github.io/inglesipa48" class="lesson-item"><div class="lesson-icon">48</div><div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Comunicação Persuasiva e Negociação</span></div></a>
+                <a href="https://espaco-liberdade.github.io/inglesipa49" class="lesson-item"><div class="lesson-icon">49</div><div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Teste Seus Conhecimentos (Quiz Final)</span></div></a>
+                <a href="https://espaco-liberdade.github.io/inglesipa50" class="lesson-item"><div class="lesson-icon">50</div><div class="lesson-info"><span class="lesson-label">Lesson</span><span class="lesson-name">Encerramento e Próximos Passos</span></div></a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p class="footer-brand">MÉTODO IPA - INGLÊS PARA AUTODIDATAS</p>
+        <p>&copy; 2024 Fábio Almeida e Lucas Martin. Todos os direitos reservados.</p>
+        <p>A jornada para a fluência começa com um som.</p>
+    </footer>
+
+</body>
+</html>
