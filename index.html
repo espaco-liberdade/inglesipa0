@@ -27,6 +27,36 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
+        /* Estilo do Botão de Menu */
+        .btn-menu {
+            display: inline-block;
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-menu:hover {
+            background-color: #34495e;
+            color: #fff;
+        }
+        .btn-menu-bottom {
+            margin-top: 30px;
+            margin-bottom: 10px;
+            display: block;
+            text-align: center;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Cabeçalhos */
         h1, h2, h3, h4 {
             color: #2c3e50;
         }
@@ -42,6 +72,7 @@
             font-size: 1.5em;
         }
 
+        /* Seção de Introdução ao Tema */
         .theme-intro {
             background-color: #eaf2f8;
             border-left: 5px solid #3498db;
@@ -58,6 +89,7 @@
             font-size: 1.2em;
         }
 
+        /* Estilos para Notas e Seções de Exercícios */
         .nota-gramatical, .nota-dica, .secao-exercicios {
             background-color: #ecf0f1;
             border-left: 5px solid #f39c12;
@@ -76,6 +108,7 @@
             color: #c0392b;
         }
 
+        /* Tabelas Responsivas */
         .table-responsive-wrapper {
             overflow-x: auto;
             margin: 20px 0;
@@ -106,6 +139,7 @@
             background-color: #f9f9f9;
         }
 
+        /* Estilização de Código e Símbolos IPA */
         code, .ipa-symbol {
             font-family: 'Courier New', Courier, monospace;
             background-color: #e0e0e0;
@@ -113,9 +147,9 @@
             border-radius: 3px;
             color: #c0392b;
         }
-        
-        /* Ajuste no cursor para indicar que o ícone de áudio é clicável */
-        .audio-link {
+
+        /* Botões de Áudio */
+        .audio-btn {
             text-decoration: none;
             font-size: 1.2em; 
             color: #3498db;
@@ -125,15 +159,17 @@
             background: none;
             padding: 0;
         }
-        .audio-link:hover {
+        .audio-btn:hover {
             color: #2980b9;
         }
 
+        /* Destaque para Palavras de Exemplo */
         .example-word {
             font-weight: bold;
             color: #2980b9; 
         }
 
+        /* Listas de Exercícios */
         .exercise-list {
             list-style-type: decimal;
             padding-left: 20px; 
@@ -142,29 +178,13 @@
         .exercise-list li {
             margin-bottom: 10px;
         }
-
-        .fill-in-blank {
-            display: inline-block;
-            width: 100px;
-            border-bottom: 1px solid #333;
-            margin: 0 5px;
-            text-align: center;
-            color: #3498db; 
-            font-weight: bold;
-        }
-
-        ul.no-bullets {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        ul.no-bullets li {
-            margin-bottom: 5px;
-        }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- BOTÃO TOPO -->
+        <a href="https://espaco-liberdade.github.io/inglesipa/" class="btn-menu">🏠 Voltar ao Menu Principal</a>
+
         <h1>Aula 0: Introdução ao IPA (Alfabeto Fonético Internacional) <span class="emoji-large">🗣️📖</span></h1>
 
         <div class="theme-intro">
@@ -182,197 +202,88 @@
                 <li><strong>Independência de dicionários (com áudio):</strong> Permite "ler" a pronúncia em dicionários que usam IPA.</li>
                 <li><strong>Compreensão de variações regionais:</strong> Facilita a identificação e o aprendizado de diferentes sotaques.</li>
             </ul>
-            <p><strong>Diferença entre letras do alfabeto e sons do IPA:</strong> O alfabeto que usamos para escrever tem 26 letras, mas o inglês tem mais de 40 sons distintos. O IPA foca nos <strong>sons</strong>, não nas letras. Por exemplo, a letra "a" pode ter vários sons (ex: cat, car, cake).</p>
-            <p><strong>Exemplo prático:</strong> A palavra <span class="example-word">cat</span> é escrita com três letras, mas sua pronúncia no IPA é <code>/kæt/</code>, mostrando claramente os três sons que a compõem. <button onclick="play('cat')" class="audio-link">🔊</button></p>
+            <p><strong>Exemplo prático:</strong> A palavra <span class="example-word">cat</span> é escrita com três letras, mas sua pronúncia no IPA é <code>/kæt/</code>, mostrando claramente os três sons que a compõem. <button class="audio-btn" onclick="play('cat')">🔊</button></p>
         </section>
 
         <section id="ipa-structure">
             <h3>0.2 Estrutura do IPA: Como Ler as Transcrições <span class="emoji-small">🔍</span></h3>
             <p>Para ler transcrições fonéticas, é importante conhecer algumas convenções:</p>
             <ul>
-                <li><strong>Barras (/ /):</strong> Indicam uma transcrição <strong>fonêmica</strong>, que representa os sons gerais de uma língua, sem detalhar pequenas variações. É o tipo mais comum em dicionários para aprendizes. Ex: <code>/kæt/</code>.</li>
-                <li><strong>Colchetes ([ ]):</strong> Indicam uma transcrição <strong>fonética</strong>, que é mais detalhada e pode mostrar variações sutis na pronúncia de um som em contextos específicos. Ex: <code>[kʰæt]</code> (mostrando que o 'k' é aspirado).</li>
+                <li><strong>Barras (/ /):</strong> Indicam uma transcrição <strong>fonêmica</strong>. Ex: <code>/kæt/</code>.</li>
+                <li><strong>Colchetes ([ ]):</strong> Indicam uma transcrição <strong>fonética</strong> detalhada. Ex: <code>[kʰæt]</code>.</li>
                 <li><strong>Dois-pontos (<code>:</code>):</strong> Indicam o alongamento de uma vogal. Ex: <code>/iː/</code> em <span class="example-word">see</span> (<code>/siː/</code>).</li>
-                <li><strong>Diacríticos:</strong> São pequenos sinais adicionados aos símbolos para indicar nuances na pronúncia, como nasalização (<code>[ã]</code>) ou aspiração (<code>[pʰ]</code>).</li>
+                <li><strong>Acento (<code>ˈ</code>):</strong> Indica a sílaba tônica.</li>
             </ul>
-            <p><strong>Organização do IPA:</strong> O gráfico do IPA é organizado de forma lógica, agrupando sons com características articulatórias semelhantes. Ele inclui vogais, consoantes, ditongos e outros símbolos.</p>
-            <p><strong>Dica prática:</strong> A maioria dos bons dicionários de inglês (online ou impressos) inclui a transcrição IPA ao lado de cada palavra. Procure por ela!</p>
+            <div class="nota-dica">
+                <h4>Dica prática:</h4>
+                <p>A maioria dos bons dicionários de inglês inclui a transcrição IPA ao lado de cada palavra. Procure por ela!</p>
+            </div>
         </section>
 
         <section id="ipa-vowels">
             <h3>0.3 Vogais do Inglês no IPA <span class="emoji-small">👄</span></h3>
-            <p><strong>Introdução aos sons vocálicos:</strong> As vogais são sons produzidos sem obstrução significativa do fluxo de ar na boca ou garganta, e geralmente envolvem a vibração das cordas vocais.</p>
             <div class="table-responsive-wrapper">
                 <table>
                     <thead>
                         <tr>
                             <th>Símbolo IPA</th>
                             <th>Exemplo (Palavra)</th>
-                            <th>Nome do Símbolo (Descritivo)</th>
+                            <th>Nome do Símbolo</th>
                             <th>Descrição da Articulação</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td><code>/iː/</code> <button onclick="play('ee', true)" class="audio-link">🔊</button></td><td>s<span class="example-word">ee</span> (<code>/siː/</code>)</td><td>i longo / i fechado</td><td>Lábios levemente espalhados, língua alta e frontal.</td></tr>
-                        <tr><td><code>/ɪ/</code> <button onclick="play('i', true)" class="audio-link">🔊</button></td><td>s<span class="example-word">i</span>t (<code>/sɪt/</code>)</td><td>i breve / i aberto</td><td>Lábios relaxados, língua um pouco mais baixa e recuada que /iː/.</td></tr>
-                        <tr><td><code>/ɛ/</code> <button onclick="play('e', true)" class="audio-link">🔊</button></td><td>b<span class="example-word">e</span>d (<code>/bɛd/</code>)</td><td>epsilon / é aberto</td><td>Boca semiaberta, língua em posição média-frontal.</td></tr>
-                        <tr><td><code>/æ/</code> <button onclick="play('a', true)" class="audio-link">🔊</button></td><td>c<span class="example-word">a</span>t (<code>/kæt/</code>)</td><td>ash / a aberto frontal</td><td>Boca bem aberta, língua baixa e frontal.</td></tr>
-                        <tr><td><code>/ɑː/</code> <button onclick="play('ah', true)" class="audio-link">🔊</button></td><td>f<span class="example-word">a</span>ther (<code>/ˈfɑːðər/</code>)</td><td>a longo / a aberto posterior</td><td>Boca aberta, língua baixa e mais para trás.</td></tr>
-                        <tr><td><code>/ɔː/</code> <button onclick="play('aw', true)" class="audio-link">🔊</button></td><td>th<span class="example-word">ou</span>ght (<code>/θɔːt/</code>)</td><td>o aberto longo / o aberto posterior</td><td>Lábios arredondados, língua média-posterior.</td></tr>
-                        <tr><td><code>/ʊ/</code> <button onclick="play('oo', true)" class="audio-link">🔊</button></td><td>b<span class="example-word">oo</span>k (<code>/bʊk/</code>)</td><td>u breve / u aberto</td><td>Lábios levemente arredondados, língua alta e mais para trás.</td></tr>
-                        <tr><td><code>/uː/</code> <button onclick="play('oo', true)" class="audio-link">🔊</button></td><td>bl<span class="example-word">ue</span> (<code>/bluː/</code>)</td><td>u longo / u fechado</td><td>Lábios bem arredondados e protusos, língua alta e traseira.</td></tr>
-                        <tr><td><code>/ʌ/</code> <button onclick="play('u', true)" class="audio-link">🔊</button></td><td>c<span class="example-word">u</span>p (<code>/kʌp/</code>)</td><td>v invertido / a breve central</td><td>Boca relaxada, língua média-central.</td></tr>
-                        <tr><td><code>/ə/</code> <button onclick="play('a', true)" class="audio-link">🔊</button></td><td><span class="example-word">a</span>bout (<code>/əˈbaʊt/</code>)</td><td>schwa / som neutro</td><td>Som mais comum em sílabas átonas, posição central.</td></tr>
+                        <tr><td><code>/iː/</code> <button class="audio-btn" onclick="play('ee', true)">🔊</button></td><td>s<span class="example-word">ee</span> (<code>/siː/</code>)</td><td>i longo</td><td>Lábios espalhados, língua alta e frontal.</td></tr>
+                        <tr><td><code>/ɪ/</code> <button class="audio-btn" onclick="play('i', true)">🔊</button></td><td>s<span class="example-word">i</span>t (<code>/sɪt/</code>)</td><td>i breve</td><td>Lábios relaxados, língua um pouco mais baixa.</td></tr>
+                        <tr><td><code>/ɛ/</code> <button class="audio-btn" onclick="play('e', true)">🔊</button></td><td>b<span class="example-word">e</span>d (<code>/bɛd/</code>)</td><td>é aberto</td><td>Boca semiaberta, posição média-frontal.</td></tr>
+                        <tr><td><code>/æ/</code> <button class="audio-btn" onclick="play('a', true)">🔊</button></td><td>c<span class="example-word">a</span>t (<code>/kæt/</code>)</td><td>a aberto frontal</td><td>Boca bem aberta, língua baixa e frontal.</td></tr>
+                        <tr><td><code>/ɑː/</code> <button class="audio-btn" onclick="play('ah', true)">🔊</button></td><td>f<span class="example-word">a</span>ther (<code>/ˈfɑːðər/</code>)</td><td>a longo posterior</td><td>Boca aberta, língua baixa e recuada.</td></tr>
+                        <tr><td><code>/uː/</code> <button class="audio-btn" onclick="play('oo', true)">🔊</button></td><td>bl<span class="example-word">ue</span> (<code>/bluː/</code>)</td><td>u longo</td><td>Lábios arredondados, língua alta e traseira.</td></tr>
                     </tbody>
                 </table>
             </div>
-        </section>
-
-        <section id="ipa-diphthongs">
-            <h3>0.4 Ditongos do Inglês no IPA <span class="emoji-small">🔄</span></h3>
-            <p><strong>Definição:</strong> Ditongos são sons vocálicos que envolvem um movimento suave de uma posição vocálica para outra dentro da mesma sílaba.</p>
-            <div class="table-responsive-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Símbolo IPA</th>
-                            <th>Exemplo (Palavra)</th>
-                            <th>Nome do Símbolo (Descritivo)</th>
-                            <th>Descrição da Articulação</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><code>/eɪ/</code> <button onclick="play('ay', true)" class="audio-link">🔊</button></td><td>s<span class="example-word">ay</span> (<code>/seɪ/</code>)</td><td>e-i</td><td>Desliza do /ɛ/ para o /ɪ/.</td></tr>
-                        <tr><td><code>/oʊ/</code> <button onclick="play('oh', true)" class="audio-link">🔊</button></td><td>g<span class="example-word">o</span> (<code>/ɡoʊ/</code>)</td><td>o-u</td><td>Desliza do /ɔ/ para o /ʊ/.</td></tr>
-                        <tr><td><code>/aɪ/</code> <button onclick="play('eye', true)" class="audio-link">🔊</button></td><td>m<span class="example-word">y</span> (<code>/maɪ/</code>)</td><td>a-i</td><td>Desliza do /ɑ/ para o /ɪ/.</td></tr>
-                        <tr><td><code>/aʊ/</code> <button onclick="play('ow', true)" class="audio-link">🔊</button></td><td>c<span class="example-word">ow</span> (<code>/kaʊ/</code>)</td><td>a-u</td><td>Desliza do /ɑ/ para o /ʊ/.</td></tr>
-                        <tr><td><code>/ɔɪ/</code> <button onclick="play('oy', true)" class="audio-link">🔊</button></td><td>b<span class="example-word">oy</span> (<code>/bɔɪ/</code>)</td><td>o-i</td><td>Desliza do /ɔ/ para o /ɪ/.</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section id="ipa-consonants">
-            <h3>0.5 Consoantes do Inglês no IPA <span class="emoji-small">🗣️</span></h3>
-            <h4>Oclusivas: Ar bloqueado e liberado.</h4>
-            <div class="table-responsive-wrapper">
-                <table>
-                    <thead><tr><th>Símbolo</th><th>Exemplo</th><th>Descrição</th><th>Nome</th></tr></thead>
-                    <tbody>
-                        <tr><td><code>/p/</code> <button onclick="play('p', true)" class="audio-link">🔊</button></td><td><span class="example-word">p</span>en</td><td>Lábios fechados, sem vibração vocal.</td><td>p</td></tr>
-                        <tr><td><code>/b/</code> <button onclick="play('b', true)" class="audio-link">🔊</button></td><td><span class="example-word">b</span>oy</td><td>Lábios fechados, com vibração.</td><td>b</td></tr>
-                        <tr><td><code>/t/</code> <button onclick="play('t', true)" class="audio-link">🔊</button></td><td><span class="example-word">t</span>op</td><td>Língua toca alvéolos, sem vibração.</td><td>t</td></tr>
-                        <tr><td><code>/d/</code> <button onclick="play('d', true)" class="audio-link">🔊</button></td><td><span class="example-word">d</span>og</td><td>Língua toca alvéolos, com vibração.</td><td>d</td></tr>
-                        <tr><td><code>/k/</code> <button onclick="play('k', true)" class="audio-link">🔊</button></td><td><span class="example-word">c</span>at</td><td>Dorso da língua toca o palato mole, sem vibração.</td><td>k</td></tr>
-                        <tr><td><code>/ɡ/</code> <button onclick="play('g', true)" class="audio-link">🔊</button></td><td><span class="example-word">g</span>o</td><td>Dorso da língua toca o palato mole, com vibração.</td><td>g</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h4>Fricativas: Ar passa por espaço estreito.</h4>
-             <div class="table-responsive-wrapper">
-                <table>
-                    <thead><tr><th>Símbolo</th><th>Exemplo</th><th>Descrição</th><th>Nome</th></tr></thead>
-                    <tbody>
-                        <tr><td><code>/f/</code> <button onclick="play('f', true)" class="audio-link">🔊</button></td><td><span class="example-word">f</span>an</td><td>Lábio inferior toca dentes superiores, sem vibração.</td><td>f</td></tr>
-                        <tr><td><code>/v/</code> <button onclick="play('v', true)" class="audio-link">🔊</button></td><td><span class="example-word">v</span>an</td><td>Lábio inferior toca dentes superiores, com vibração.</td><td>v</td></tr>
-                        <tr><td><code>/θ/</code> <button onclick="play('th', true)" class="audio-link">🔊</button></td><td><span class="example-word">th</span>ink</td><td>Ponta da língua entre os dentes, sem vibração.</td><td>theta</td></tr>
-                        <tr><td><code>/ð/</code> <button onclick="play('th', true)" class="audio-link">🔊</button></td><td><span class="example-word">th</span>is</td><td>Ponta da língua entre os dentes, com vibração.</td><td>eth</td></tr>
-                        <tr><td><code>/s/</code> <button onclick="play('s', true)" class="audio-link">🔊</button></td><td><span class="example-word">s</span>ee</td><td>Ponta da língua perto dos alvéolos, sem vibração.</td><td>s</td></tr>
-                        <tr><td><code>/z/</code> <button onclick="play('z', true)" class="audio-link">🔊</button></td><td><span class="example-word">z</span>oo</td><td>Ponta da língua perto dos alvéolos, com vibração.</td><td>z</td></tr>
-                        <tr><td><code>/ʃ/</code> <button onclick="play('sh', true)" class="audio-link">🔊</button></td><td><span class="example-word">sh</span>e</td><td>Lâmina da língua perto do palato duro, sem vibração.</td><td>esh</td></tr>
-                        <tr><td><code>/h/</code> <button onclick="play('h', true)" class="audio-link">🔊</button></td><td><span class="example-word">h</span>at</td><td>Ar passa pela glote, sem vibração.</td><td>h</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section id="ipa-suprasegmentals">
-            <h3>0.6 Símbolos Suprassegmentais e Diacríticos <span class="emoji-small">📊</span></h3>
-            <ul>
-                <li><strong>Acentuação tônica (Primary Stress):</strong> Um apóstrofo (<code>ˈ</code>) antes da sílaba tônica. Ex: <code>/ˈæp.l̩/</code>.</li>
-                <li><strong>Alongamento de vogal:</strong> Dois-pontos (<code>ː</code>). Ex: <code>/siː/</code>.</li>
-            </ul>
-        </section>
-
-        <section id="ipa-production-guide">
-            <h3>0.7 Como Produzir os Sons: Guia Prático de Articulação <span class="emoji-small">🗣️👂</span></h3>
-            <p><strong>Dicas para brasileiros:</strong></p>
-            <ul>
-                <li>Sons como <code>/θ/</code> (think) não existem em português. Pratique a língua entre os dentes.</li>
-                <li>A vogal <code>/æ/</code> (cat) requer abertura maior da boca que o nosso "é".</li>
-            </ul>
         </section>
 
         <section id="ipa-application">
-            <h3>0.8 Aplicando o IPA: Lendo e Pronunciando Frases <span class="emoji-small">📖🔊</span></h3>
-            <p><strong>Exemplo:</strong> "The cat is on the mat." → <code>/ðə kæt ɪz ɑn ðə mæt/</code> <button onclick="play('The cat is on the mat.')" class="audio-link">🔊</button></p>
-            <p><strong>Outros Exemplos:</strong></p>
+            <h3>0.8 Aplicando o IPA: Lendo Frases <span class="emoji-small">📖🔊</span></h3>
             <ul>
-                <li>"I see three green trees." <button onclick="play('I see three green trees.')" class="audio-link">🔊</button></li>
-                <li>"I like to read books." <button onclick="play('I like to read books.')" class="audio-link">🔊</button></li>
+                <li>"The cat is on the mat." <button class="audio-btn" onclick="play('The cat is on the mat.')">🔊</button></li>
+                <li>"I see three green trees." <button class="audio-btn" onclick="play('I see three green trees.')">🔊</button></li>
+                <li>"I like to read books." <button class="audio-btn" onclick="play('I like to read books.')">🔊</button></li>
             </ul>
-        </section>
-
-        <section id="ipa-exercises">
-            <h3>0.9 Exercícios Práticos <span class="emoji-small">📝</span></h3>
-            <div class="secao-exercicios">
-                <h4>Atividades Sugeridas:</h4>
-                <ol class="exercise-list">
-                    <li>Combine Palavras e Transcrições.</li>
-                    <li>Pronuncie a Partir do IPA (Ex: <code>/bʊk/</code>).</li>
-                </ol>
-            </div>
         </section>
 
         <section id="ipa-conclusion">
             <h3>0.10 Conclusão e Próximos Passos <span class="emoji-small">🏁➡️</span></h3>
-            <p>Parabéns por iniciar sua jornada no IPA! Esta ferramenta poderosa transformará sua pronúncia.</p>
-            <p>Prepare-se para a Aula 1, onde focaremos no alfabeto tradicional e sons básicos.</p>
+            <p>Parabéns por iniciar sua jornada no IPA! Esta ferramenta transformará sua pronúncia.</p>
+            <div class="theme-intro">
+                <p><strong>Preparação para a Aula 1:</strong> Focaremos no alfabeto tradicional e sons básicos das letras. Sua jornada está apenas começando!</p>
+            </div>
         </section>
 
+        <!-- BOTÃO FINAL -->
+        <a href="https://espaco-liberdade.github.io/inglesipa/" class="btn-menu btn-menu-bottom">🏠 Voltar ao Menu Principal</a>
     </div>
 
-    <!-- SCRIPT DE ÁUDIO NATIVO (WEB SPEECH API) -->
     <script>
         let voices = [];
         let selectedVoice = null;
-
-        // Função para carregar vozes do sistema
         function loadVoices() {
             voices = window.speechSynthesis.getVoices();
-            // Prioriza vozes "Google US English", "Siri" ou qualquer "en-US"
             selectedVoice = voices.find(v => v.name.includes('Google US English')) ||
                             voices.find(v => v.name.includes('Siri')) ||
                             voices.find(v => v.lang === 'en-US') ||
-                            voices.find(v => v.lang.startsWith('en')) ||
                             voices[0];
         }
-
-        // Garante que as vozes sejam carregadas (alguns navegadores carregam assincronamente)
         window.speechSynthesis.onvoiceschanged = loadVoices;
         loadVoices();
-
         function play(text, isIPA = false) {
-            if (!window.speechSynthesis) {
-                console.error("Seu navegador não suporta a Web Speech API.");
-                return;
-            }
-
-            // Cancela áudios em execução para evitar sobreposição
             window.speechSynthesis.cancel();
-
             const utterance = new SpeechSynthesisUtterance();
             utterance.voice = selectedVoice;
             utterance.lang = 'en-US';
-            
-            // Lógica de Alfabetização: se for símbolo isolado, converte p/ minúsculo p/ forçar o som silábico
             utterance.text = isIPA ? text.toLowerCase() : text;
-            
-            // Ajuste de velocidade (levemente mais lento para clareza didática)
             utterance.rate = 0.9;
-            utterance.pitch = 1;
-
             window.speechSynthesis.speak(utterance);
         }
     </script>
